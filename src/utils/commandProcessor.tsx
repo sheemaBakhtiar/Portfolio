@@ -1,9 +1,9 @@
-import React from 'react';
-import AboutContent from '../components/content/AboutContent';
-import ProjectsContent from '../components/content/ProjectsContent';
-import SkillsContent from '../components/content/SkillsContent';
-import ContactContent from '../components/content/ContactContent';
-import HelpContent from '../components/content/HelpContent';
+import React from "react";
+import AboutContent from "../components/content/AboutContent";
+import ProjectsContent from "../components/content/ProjectsContent";
+import SkillsContent from "../components/content/SkillsContent";
+import ContactContent from "../components/content/ContactContent";
+import HelpContent from "../components/content/HelpContent";
 
 type CommandResult = {
   output: React.ReactNode;
@@ -12,29 +12,29 @@ type CommandResult = {
 
 // List of available commands
 const COMMANDS = {
-  ABOUT: 'about',
-  PROJECTS: 'projects',
-  SKILLS: 'skills',
-  CONTACT: 'contact',
-  HELP: 'help',
-  CLEAR: 'clear',
-  LS: 'ls',
-  CAT: 'cat',
-  ECHO: 'echo',
-  DATE: 'date',
-  WHOAMI: 'whoami',
+  ABOUT: "about",
+  PROJECTS: "projects",
+  SKILLS: "skills",
+  CONTACT: "contact",
+  HELP: "help",
+  CLEAR: "clear",
+  LS: "ls",
+  CAT: "cat",
+  ECHO: "echo",
+  DATE: "date",
+  WHOAMI: "whoami",
 };
 
 // Files for cat command
 const FILES: Record<string, React.ReactNode> = {
-  'readme.txt': (
+  "readme.txt": (
     <div>
       <p className="mb-2">## Terminal Portfolio</p>
       <p>This is a terminal-style portfolio made with React and TypeScript.</p>
       <p>Type 'help' to see available commands.</p>
     </div>
   ),
-  'contact.txt': (
+  "contact.txt": (
     <div>
       <p>Email: your.email@example.com</p>
       <p>GitHub: github.com/yourusername</p>
@@ -46,29 +46,29 @@ const FILES: Record<string, React.ReactNode> = {
 export const commandProcessor = (command: string): CommandResult => {
   // Clean up the command
   const trimmedCommand = command.trim().toLowerCase();
-  const [baseCommand, ...args] = trimmedCommand.split(' ');
+  const [baseCommand, ...args] = trimmedCommand.split(" ");
 
   // Process commands
   switch (baseCommand) {
     case COMMANDS.HELP:
       return { output: <HelpContent /> };
-      
+
     case COMMANDS.ABOUT:
       return { output: <AboutContent /> };
-      
+
     case COMMANDS.PROJECTS:
       return { output: <ProjectsContent /> };
-      
+
     case COMMANDS.SKILLS:
       return { output: <SkillsContent /> };
-      
+
     case COMMANDS.CONTACT:
       return { output: <ContactContent /> };
-      
+
     case COMMANDS.CLEAR:
       // Clear command will be handled in the Terminal component
-      return { output: 'Clearing terminal...' };
-      
+      return { output: "" };
+
     case COMMANDS.LS:
       return {
         output: (
@@ -81,36 +81,38 @@ export const commandProcessor = (command: string): CommandResult => {
           </div>
         ),
       };
-      
+
     case COMMANDS.CAT:
       if (args.length === 0) {
-        return { output: 'Usage: cat [filename]', isError: true };
+        return { output: "Usage: cat [filename]", isError: true };
       }
-      
+
       const filename = args[0];
       if (FILES[filename]) {
         return { output: FILES[filename] };
       } else {
         return { output: `File not found: ${filename}`, isError: true };
       }
-      
+
     case COMMANDS.ECHO:
-      return { output: args.join(' ') };
-      
+      return { output: args.join(" ") };
+
     case COMMANDS.DATE:
       return { output: new Date().toString() };
-      
+
     case COMMANDS.WHOAMI:
-      return { output: 'guest@portfolio' };
-      
+      return { output: "guest@portfolio" };
+
     default:
-      if (trimmedCommand === '') {
-        return { output: '', isError: false };
+      if (trimmedCommand === "") {
+        return { output: "", isError: false };
       }
       return {
         output: (
           <div>
-            <span className="text-red-500">Command not found: {baseCommand}</span>
+            <span className="text-red-500">
+              Command not found: {baseCommand}
+            </span>
             <div>Type 'help' to see available commands.</div>
           </div>
         ),
@@ -122,10 +124,8 @@ export const commandProcessor = (command: string): CommandResult => {
 // Function to get command suggestions based on input
 export const getCommandSuggestions = (input: string): string[] => {
   const commandValues = Object.values(COMMANDS);
-  
+
   if (!input) return commandValues;
-  
-  return commandValues.filter(cmd => 
-    cmd.startsWith(input.toLowerCase())
-  );
+
+  return commandValues.filter((cmd) => cmd.startsWith(input.toLowerCase()));
 };

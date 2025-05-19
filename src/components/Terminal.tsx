@@ -4,7 +4,8 @@ import TerminalOutput from "./TerminalOutput";
 import { useTerminal } from "../context/useTerminal";
 
 const Terminal: React.FC = () => {
-  const { outputHistory, executeCommand } = useTerminal();
+  const { outputHistory, executeCommand, clearTerminal, isTerminalCleared } =
+    useTerminal();
   const [showBoot, setShowBoot] = useState(true);
   const terminalRef = useRef<HTMLDivElement>(null);
 
@@ -26,9 +27,8 @@ const Terminal: React.FC = () => {
 
   // Handle clear command
   const handleClear = () => {
-    if (terminalRef.current) {
-      // Will be handled through context
-    }
+    // Use the clearTerminal function from context
+    clearTerminal();
   };
 
   return (
@@ -56,7 +56,18 @@ const Terminal: React.FC = () => {
             <BootSequence />
           ) : (
             <>
-              <TerminalOutput />
+              {!isTerminalCleared && <TerminalOutput />}
+              {isTerminalCleared && (
+                <div className="mb-4">
+                  <div className="mb-2 text-xl font-bold">
+                    Welcome to my terminal portfolio!
+                  </div>
+                  <div className="mb-4">
+                    Type <span className="text-yellow-400">'help'</span> to see
+                    available commands.
+                  </div>
+                </div>
+              )}
               <CommandLine onExecute={executeCommand} onClear={handleClear} />
             </>
           )}

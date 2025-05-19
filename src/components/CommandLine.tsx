@@ -14,6 +14,7 @@ const CommandLine: React.FC<CommandLineProps> = ({ onExecute, onClear }) => {
     commandHistory,
     historyIndex,
     setHistoryIndex,
+    clearTerminal,
   } = useTerminal();
 
   const [suggestions, setSuggestions] = useState<string[]>([]);
@@ -39,7 +40,11 @@ const CommandLine: React.FC<CommandLineProps> = ({ onExecute, onClear }) => {
     switch (e.key) {
       case "Enter":
         if (currentCommand.trim() === "clear") {
-          onClear();
+          // Use the clearTerminal function from context
+          clearTerminal();
+
+          // Clear the input
+          setCurrentCommand("");
         } else {
           onExecute(currentCommand);
         }
