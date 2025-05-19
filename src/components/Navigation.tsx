@@ -55,6 +55,12 @@ const Navigation: React.FC<NavigationProps> = ({ onOpenTerminal }) => {
             Projects
           </button>
           <button
+            onClick={() => scrollToSection("experience")}
+            className="text-gray-300 hover:text-pink-400 transition-colors"
+          >
+            Experience
+          </button>
+          <button
             onClick={() => scrollToSection("contact")}
             className="text-gray-300 hover:text-pink-400 transition-colors"
           >
@@ -117,6 +123,12 @@ const Navigation: React.FC<NavigationProps> = ({ onOpenTerminal }) => {
               className="text-gray-300 hover:text-pink-400 transition-colors text-left py-2"
             >
               Projects
+            </button>
+            <button
+              onClick={() => scrollToSection("experience")}
+              className="text-gray-300 hover:text-pink-400 transition-colors text-left py-2"
+            >
+              Experience
             </button>
             <button
               onClick={() => scrollToSection("contact")}

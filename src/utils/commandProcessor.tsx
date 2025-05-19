@@ -3,6 +3,7 @@ import AboutContent from "../components/content/AboutContent";
 import ProjectsContent from "../components/content/ProjectsContent";
 import SkillsContent from "../components/content/SkillsContent";
 import ContactContent from "../components/content/ContactContent";
+import ExperienceContent from "../components/content/ExperienceContent";
 import HelpContent from "../components/content/HelpContent";
 
 type CommandResult = {
@@ -15,6 +16,7 @@ const COMMANDS = {
   ABOUT: "about",
   PROJECTS: "projects",
   SKILLS: "skills",
+  EXPERIENCE: "experience",
   CONTACT: "contact",
   HELP: "help",
   CLEAR: "clear",
@@ -62,6 +64,9 @@ export const commandProcessor = (command: string): CommandResult => {
     case COMMANDS.SKILLS:
       return { output: <SkillsContent /> };
 
+    case COMMANDS.EXPERIENCE:
+      return { output: <ExperienceContent /> };
+
     case COMMANDS.CONTACT:
       return { output: <ContactContent /> };
 
@@ -78,6 +83,7 @@ export const commandProcessor = (command: string): CommandResult => {
             <span className="text-pink-400">about/</span>
             <span className="text-pink-400">projects/</span>
             <span className="text-pink-400">skills/</span>
+            <span className="text-pink-400">experience/</span>
           </div>
         ),
       };

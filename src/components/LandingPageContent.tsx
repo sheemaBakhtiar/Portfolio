@@ -21,6 +21,7 @@ const LandingPageContent: React.FC<LandingPageContentProps> = ({
   const profilePicRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
+  const experienceRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -33,6 +34,7 @@ const LandingPageContent: React.FC<LandingPageContentProps> = ({
         profilePicRef.current,
         aboutRef.current,
         projectsRef.current,
+        experienceRef.current,
         contactRef.current,
       ],
       {
@@ -84,6 +86,16 @@ const LandingPageContent: React.FC<LandingPageContentProps> = ({
         "-=0.4"
       )
       .to(
+        experienceRef.current,
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "back.out(1.7)",
+        },
+        "-=0.4"
+      )
+      .to(
         contactRef.current,
         {
           opacity: 1,
@@ -105,7 +117,10 @@ const LandingPageContent: React.FC<LandingPageContentProps> = ({
       {/* Header and Profile Picture Section - Centered Vertically */}
       <div className="flex flex-col items-center justify-center min-h-[60vh] mt-24 mb-16">
         <header ref={headerRef} className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-bold text-pink-400 mb-4">
+          <h1
+            className="text-5xl md:text-7xl text-pink-400 mb-4 passions-conflict-regular"
+            style={{ fontFamily: "'Passions Conflict', cursive" }}
+          >
             Sheema Bakhtiar
           </h1>
           <p className="text-xl md:text-2xl text-gray-300">
@@ -296,6 +311,143 @@ const LandingPageContent: React.FC<LandingPageContentProps> = ({
         </div>
       </section>
 
+      {/* Experience Section */}
+      <section
+        ref={experienceRef}
+        id="experience"
+        className="max-w-4xl mx-auto mb-20 p-6 bg-gray-800 rounded-lg shadow-lg"
+      >
+        <h2 className="text-2xl md:text-3xl font-bold text-pink-400 mb-6 border-b border-gray-700 pb-2 flex items-center">
+          <img
+            src="/src/public/4092564_profile_about_mobile ui_user_icon.png"
+            alt="Experience Icon"
+            className="w-10 h-10 mr-3 opacity-90 filter hue-rotate-120 brightness-110"
+          />
+          Experience
+        </h2>
+
+        <div className="space-y-6">
+          {/* Experience Item 1 */}
+          <div className="bg-gray-700/30 p-5 rounded-lg shadow-md hover:shadow-pink-400/20 transition-all duration-300 transform hover:-translate-y-1">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
+              <h3 className="text-xl font-bold text-pink-400">
+                Senior Frontend Developer
+              </h3>
+              <div className="text-pink-400 font-semibold mt-1 md:mt-0">
+                2022 - Present
+              </div>
+            </div>
+            <h4 className="text-gray-300 font-semibold mb-2">TechCorp Inc.</h4>
+            <p className="text-gray-400 mb-3">
+              Led the development of responsive web applications using React and
+              TypeScript. Implemented state management solutions and optimized
+              performance.
+            </p>
+            <div className="flex flex-wrap gap-1">
+              <span className="text-xs bg-gray-800 text-pink-400 px-2 py-1 rounded">
+                React
+              </span>
+              <span className="text-xs bg-gray-800 text-pink-400 px-2 py-1 rounded">
+                TypeScript
+              </span>
+              <span className="text-xs bg-gray-800 text-pink-400 px-2 py-1 rounded">
+                Redux
+              </span>
+            </div>
+          </div>
+
+          {/* Experience Item 2 */}
+          <div className="bg-gray-700/30 p-5 rounded-lg shadow-md hover:shadow-pink-400/20 transition-all duration-300 transform hover:-translate-y-1">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
+              <h3 className="text-xl font-bold text-pink-400">
+                Frontend Developer
+              </h3>
+              <div className="text-pink-400 font-semibold mt-1 md:mt-0">
+                2020 - 2022
+              </div>
+            </div>
+            <h4 className="text-gray-300 font-semibold mb-2">
+              WebSolutions Ltd.
+            </h4>
+            <p className="text-gray-400 mb-3">
+              Developed and maintained client websites and web applications.
+              Collaborated with designers to implement responsive UI components.
+            </p>
+            <div className="flex flex-wrap gap-1">
+              <span className="text-xs bg-gray-800 text-pink-400 px-2 py-1 rounded">
+                JavaScript
+              </span>
+              <span className="text-xs bg-gray-800 text-pink-400 px-2 py-1 rounded">
+                React
+              </span>
+              <span className="text-xs bg-gray-800 text-pink-400 px-2 py-1 rounded">
+                CSS
+              </span>
+            </div>
+          </div>
+
+          {/* Experience Item 3 */}
+          <div className="bg-gray-700/30 p-5 rounded-lg shadow-md hover:shadow-pink-400/20 transition-all duration-300 transform hover:-translate-y-1">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
+              <h3 className="text-xl font-bold text-pink-400">
+                Junior Web Developer
+              </h3>
+              <div className="text-pink-400 font-semibold mt-1 md:mt-0">
+                2018 - 2020
+              </div>
+            </div>
+            <h4 className="text-gray-300 font-semibold mb-2">
+              Digital Creations
+            </h4>
+            <p className="text-gray-400 mb-3">
+              Assisted in the development of websites and web applications.
+              Learned and implemented modern web development practices.
+            </p>
+            <div className="flex flex-wrap gap-1">
+              <span className="text-xs bg-gray-800 text-pink-400 px-2 py-1 rounded">
+                HTML
+              </span>
+              <span className="text-xs bg-gray-800 text-pink-400 px-2 py-1 rounded">
+                CSS
+              </span>
+              <span className="text-xs bg-gray-800 text-pink-400 px-2 py-1 rounded">
+                JavaScript
+              </span>
+            </div>
+          </div>
+
+          {/* Experience Item 4 */}
+          <div className="bg-gray-700/30 p-5 rounded-lg shadow-md hover:shadow-pink-400/20 transition-all duration-300 transform hover:-translate-y-1">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
+              <h3 className="text-xl font-bold text-pink-400">
+                Computer Science Student
+              </h3>
+              <div className="text-pink-400 font-semibold mt-1 md:mt-0">
+                2016 - 2018
+              </div>
+            </div>
+            <h4 className="text-gray-300 font-semibold mb-2">
+              University of Technology
+            </h4>
+            <p className="text-gray-400 mb-3">
+              Completed Bachelor's degree in Computer Science with focus on web
+              technologies. Participated in coding competitions and hackathons.
+            </p>
+            <div className="flex flex-wrap gap-1">
+              <span className="text-xs bg-gray-800 text-pink-400 px-2 py-1 rounded">
+                Java
+              </span>
+              <span className="text-xs bg-gray-800 text-pink-400 px-2 py-1 rounded">
+                Python
+              </span>
+              <span className="text-xs bg-gray-800 text-pink-400 px-2 py-1 rounded">
+                Web Dev
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section
         ref={contactRef}
@@ -351,7 +503,14 @@ const LandingPageContent: React.FC<LandingPageContentProps> = ({
       {/* Footer */}
       <footer className="text-center text-gray-500 py-6 mt-auto">
         <p>
-          © {new Date().getFullYear()} Sheema Bakhtiar | All Rights Reserved
+          © {new Date().getFullYear()}{" "}
+          <span
+            className="passions-conflict-regular text-4xl text-pink-400"
+            style={{ fontFamily: "'Passions Conflict', cursive" }}
+          >
+            Sheema Bakhtiar
+          </span>{" "}
+          | All Rights Reserved
         </p>
       </footer>
     </div>

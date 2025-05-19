@@ -28,6 +28,15 @@ const HelpContent: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-12 gap-2">
+          <div className="col-span-3 md:col-span-2 text-pink-400">
+            experience
+          </div>
+          <div className="col-span-9 md:col-span-10">
+            View my professional experience
+          </div>
+        </div>
+
+        <div className="grid grid-cols-12 gap-2">
           <div className="col-span-3 md:col-span-2 text-pink-400">contact</div>
           <div className="col-span-9 md:col-span-10">
             View contact information
