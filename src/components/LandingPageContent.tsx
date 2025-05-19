@@ -90,7 +90,7 @@ const LandingPageContent: React.FC<LandingPageContentProps> = ({
       <Navigation onOpenTerminal={onOpenTerminal} />
       {/* Header Section */}
       <header ref={headerRef} className="text-center mb-16 mt-8">
-        <h1 className="text-4xl md:text-6xl font-bold text-green-400 mb-4">
+        <h1 className="text-4xl md:text-6xl font-bold text-pink-400 mb-4">
           Sheema Bakhtiar
         </h1>
         <p className="text-xl md:text-2xl text-gray-300">
@@ -104,7 +104,12 @@ const LandingPageContent: React.FC<LandingPageContentProps> = ({
         id="about"
         className="max-w-4xl mx-auto mb-20 p-6 bg-gray-800 rounded-lg shadow-lg"
       >
-        <h2 className="text-2xl md:text-3xl font-bold text-green-400 mb-6 border-b border-gray-700 pb-2">
+        <h2 className="text-2xl md:text-3xl font-bold text-pink-400 mb-6 border-b border-gray-700 pb-2 flex items-center">
+          <img
+            src="/src/public/4092564_profile_about_mobile ui_user_icon.png"
+            alt="About Icon"
+            className="w-10 h-10 mr-3 opacity-90 filter hue-rotate-60 brightness-110"
+          />
           About Me
         </h2>
         <div className="space-y-4 text-gray-300">
@@ -120,9 +125,7 @@ const LandingPageContent: React.FC<LandingPageContentProps> = ({
             projects ranging from web applications to mobile solutions.
           </p>
           <div className="mt-6">
-            <h3 className="text-xl font-semibold text-green-400 mb-3">
-              Skills
-            </h3>
+            <h3 className="text-xl font-semibold text-pink-400 mb-3">Skills</h3>
             <div className="flex flex-wrap gap-2">
               <span className="px-3 py-1 bg-gray-700 rounded-full text-sm">
                 JavaScript
@@ -159,27 +162,32 @@ const LandingPageContent: React.FC<LandingPageContentProps> = ({
         id="projects"
         className="max-w-4xl mx-auto mb-20 p-6 bg-gray-800 rounded-lg shadow-lg"
       >
-        <h2 className="text-2xl md:text-3xl font-bold text-green-400 mb-6 border-b border-gray-700 pb-2">
+        <h2 className="text-2xl md:text-3xl font-bold text-pink-400 mb-6 border-b border-gray-700 pb-2 flex items-center">
+          <img
+            src="/src/public/3994346_code_coding_css_html_programming_icon.png"
+            alt="Projects Icon"
+            className="w-10 h-10 mr-3 opacity-90 filter hue-rotate-180 brightness-110"
+          />
           Projects
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Project 1 */}
           <div className="bg-gray-700 rounded-lg overflow-hidden shadow-md">
             <div className="p-4">
-              <h3 className="text-xl font-bold text-green-400 mb-2">
+              <h3 className="text-xl font-bold text-pink-400 mb-2">
                 Project Alpha
               </h3>
               <p className="text-gray-300 mb-3">
                 A secure authentication system with multi-factor auth
               </p>
               <div className="flex flex-wrap gap-1 mb-3">
-                <span className="text-xs bg-gray-800 text-yellow-400 px-2 py-1 rounded">
+                <span className="text-xs bg-gray-800 text-pink-400 px-2 py-1 rounded">
                   Node.js
                 </span>
-                <span className="text-xs bg-gray-800 text-yellow-400 px-2 py-1 rounded">
+                <span className="text-xs bg-gray-800 text-pink-400 px-2 py-1 rounded">
                   Express
                 </span>
-                <span className="text-xs bg-gray-800 text-yellow-400 px-2 py-1 rounded">
+                <span className="text-xs bg-gray-800 text-pink-400 px-2 py-1 rounded">
                   MongoDB
                 </span>
               </div>
@@ -187,7 +195,7 @@ const LandingPageContent: React.FC<LandingPageContentProps> = ({
                 href="https://github.com/yourusername/project-alpha"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-green-400 hover:underline flex items-center text-sm"
+                className="text-pink-400 hover:underline flex items-center text-sm"
               >
                 View Repository <ExternalLinkIcon size={14} className="ml-1" />
               </a>
@@ -197,20 +205,20 @@ const LandingPageContent: React.FC<LandingPageContentProps> = ({
           {/* Project 2 */}
           <div className="bg-gray-700 rounded-lg overflow-hidden shadow-md">
             <div className="p-4">
-              <h3 className="text-xl font-bold text-green-400 mb-2">
+              <h3 className="text-xl font-bold text-pink-400 mb-2">
                 DataViz Pro
               </h3>
               <p className="text-gray-300 mb-3">
                 Interactive data visualization dashboard
               </p>
               <div className="flex flex-wrap gap-1 mb-3">
-                <span className="text-xs bg-gray-800 text-yellow-400 px-2 py-1 rounded">
+                <span className="text-xs bg-gray-800 text-pink-400 px-2 py-1 rounded">
                   React
                 </span>
-                <span className="text-xs bg-gray-800 text-yellow-400 px-2 py-1 rounded">
+                <span className="text-xs bg-gray-800 text-pink-400 px-2 py-1 rounded">
                   D3.js
                 </span>
-                <span className="text-xs bg-gray-800 text-yellow-400 px-2 py-1 rounded">
+                <span className="text-xs bg-gray-800 text-pink-400 px-2 py-1 rounded">
                   Firebase
                 </span>
               </div>
@@ -218,7 +226,7 @@ const LandingPageContent: React.FC<LandingPageContentProps> = ({
                 href="https://github.com/yourusername/dataviz-pro"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-green-400 hover:underline flex items-center text-sm"
+                className="text-pink-400 hover:underline flex items-center text-sm"
               >
                 View Repository <ExternalLinkIcon size={14} className="ml-1" />
               </a>
@@ -228,18 +236,18 @@ const LandingPageContent: React.FC<LandingPageContentProps> = ({
           {/* Project 3 */}
           <div className="bg-gray-700 rounded-lg overflow-hidden shadow-md">
             <div className="p-4">
-              <h3 className="text-xl font-bold text-green-400 mb-2">NetScan</h3>
+              <h3 className="text-xl font-bold text-pink-400 mb-2">NetScan</h3>
               <p className="text-gray-300 mb-3">
                 Network vulnerability scanner
               </p>
               <div className="flex flex-wrap gap-1 mb-3">
-                <span className="text-xs bg-gray-800 text-yellow-400 px-2 py-1 rounded">
+                <span className="text-xs bg-gray-800 text-pink-400 px-2 py-1 rounded">
                   Go
                 </span>
-                <span className="text-xs bg-gray-800 text-yellow-400 px-2 py-1 rounded">
+                <span className="text-xs bg-gray-800 text-pink-400 px-2 py-1 rounded">
                   React
                 </span>
-                <span className="text-xs bg-gray-800 text-yellow-400 px-2 py-1 rounded">
+                <span className="text-xs bg-gray-800 text-pink-400 px-2 py-1 rounded">
                   PostgreSQL
                 </span>
               </div>
@@ -247,7 +255,7 @@ const LandingPageContent: React.FC<LandingPageContentProps> = ({
                 href="https://github.com/yourusername/netscan"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-green-400 hover:underline flex items-center text-sm"
+                className="text-pink-400 hover:underline flex items-center text-sm"
               >
                 View Repository <ExternalLinkIcon size={14} className="ml-1" />
               </a>
@@ -262,7 +270,12 @@ const LandingPageContent: React.FC<LandingPageContentProps> = ({
         id="contact"
         className="max-w-4xl mx-auto mb-20 p-6 bg-gray-800 rounded-lg shadow-lg"
       >
-        <h2 className="text-2xl md:text-3xl font-bold text-green-400 mb-6 border-b border-gray-700 pb-2">
+        <h2 className="text-2xl md:text-3xl font-bold text-pink-400 mb-6 border-b border-gray-700 pb-2 flex items-center">
+          <img
+            src="/src/public/5740092_call_communication_connection_contact_phone_icon.png"
+            alt="Contact Icon"
+            className="w-10 h-10 mr-3 opacity-90 filter hue-rotate-270 brightness-110"
+          />
           Contact
         </h2>
         <div className="space-y-4">
@@ -274,7 +287,7 @@ const LandingPageContent: React.FC<LandingPageContentProps> = ({
           <div className="flex flex-col space-y-3">
             <a
               href="mailto:your.email@example.com"
-              className="flex items-center text-gray-300 hover:text-green-400 transition-colors"
+              className="flex items-center text-gray-300 hover:text-pink-400 transition-colors"
             >
               <MailIcon className="mr-3" size={20} />
               <span>your.email@example.com</span>
@@ -284,7 +297,7 @@ const LandingPageContent: React.FC<LandingPageContentProps> = ({
               href="https://github.com/yourusername"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center text-gray-300 hover:text-green-400 transition-colors"
+              className="flex items-center text-gray-300 hover:text-pink-400 transition-colors"
             >
               <GithubIcon className="mr-3" size={20} />
               <span>github.com/yourusername</span>
@@ -294,7 +307,7 @@ const LandingPageContent: React.FC<LandingPageContentProps> = ({
               href="https://linkedin.com/in/yourusername"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center text-gray-300 hover:text-green-400 transition-colors"
+              className="flex items-center text-gray-300 hover:text-pink-400 transition-colors"
             >
               <LinkedinIcon className="mr-3" size={20} />
               <span>linkedin.com/in/yourusername</span>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface SkillCategory {
   name: string;
@@ -14,7 +14,7 @@ const skillCategories: SkillCategory[] = [
       { name: "Python", level: 80 },
       { name: "Go", level: 70 },
       { name: "Rust", level: 65 },
-    ]
+    ],
   },
   {
     name: "Backend Technologies",
@@ -24,7 +24,7 @@ const skillCategories: SkillCategory[] = [
       { name: "PostgreSQL", level: 75 },
       { name: "MongoDB", level: 70 },
       { name: "Docker", level: 75 },
-    ]
+    ],
   },
   {
     name: "DevOps & Security",
@@ -34,20 +34,22 @@ const skillCategories: SkillCategory[] = [
       { name: "Network Security", level: 85 },
       { name: "Penetration Testing", level: 75 },
       { name: "Cryptography", level: 70 },
-    ]
-  }
+    ],
+  },
 ];
 
 const SkillsContent: React.FC = () => {
   return (
     <div className="space-y-4">
       <h2 className="text-xl font-bold text-yellow-400">Skills & Expertise</h2>
-      
+
       <div className="space-y-6">
         {skillCategories.map((category, catIndex) => (
           <div key={catIndex} className="space-y-2">
-            <h3 className="text-lg font-semibold text-blue-400">{category.name}</h3>
-            
+            <h3 className="text-lg font-semibold text-blue-400">
+              {category.name}
+            </h3>
+
             <div className="space-y-2">
               {category.skills.map((skill, skillIndex) => (
                 <div key={skillIndex} className="space-y-1">
@@ -56,8 +58,8 @@ const SkillsContent: React.FC = () => {
                     <span>{skill.level}%</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-2.5">
-                    <div 
-                      className="bg-green-500 h-2.5 rounded-full" 
+                    <div
+                      className="bg-pink-500 h-2.5 rounded-full"
                       style={{ width: `${skill.level}%` }}
                     ></div>
                   </div>
@@ -67,7 +69,7 @@ const SkillsContent: React.FC = () => {
           </div>
         ))}
       </div>
-      
+
       <div className="mt-4">
         <h3 className="text-lg font-semibold text-blue-400">Certifications</h3>
         <ul className="list-disc list-inside pl-2 space-y-1">

@@ -59,7 +59,7 @@ const WelcomePage: React.FC<WelcomePageProps> = ({ onComplete }) => {
       <div ref={textRef} className="text-center">
         <h1 className="text-3xl md:text-5xl text-white font-mono mb-4">
           Hello, I am{" "}
-          <span ref={nameRef} className="text-green-400 font-bold glitch-text">
+          <span ref={nameRef} className="text-pink-400 font-bold glitch-text">
             Sheema Bakhtiar
           </span>
         </h1>

@@ -48,7 +48,7 @@
   left: 0;
   right: 0;
   height: 5px;
-  background-color: rgba(0, 255, 0, 0.05);
+  background-color: rgba(255, 105, 180, 0.05);
   animation: scanline 6s linear infinite;
   pointer-events: none;
   z-index: 11;
@@ -69,12 +69,26 @@
   font-weight: bold;
 }
 
+/* Pink theme colors */
+[data-theme="pink"] .prompt {
+  color: #ff80bf;
+  font-weight: bold;
+}
+
 .system-text {
   color: #bd93f9;
 }
 
+[data-theme="pink"] .system-text {
+  color: #d580ff;
+}
+
 .user-input {
   color: #8be9fd;
+}
+
+[data-theme="pink"] .user-input {
+  color: #ff9ee6;
 }
 
 .command-output {
@@ -90,8 +104,16 @@
   color: #50fa7b;
 }
 
+[data-theme="pink"] .success-text {
+  color: #ff80bf;
+}
+
 .warning-text {
   color: #ffb86c;
+}
+
+[data-theme="pink"] .warning-text {
+  color: #ffb8e6;
 }
 
 /* Welcome and Landing Page Animations */

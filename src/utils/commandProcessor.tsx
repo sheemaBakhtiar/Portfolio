@@ -75,9 +75,9 @@ export const commandProcessor = (command: string): CommandResult => {
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
             <span className="text-blue-400">readme.txt</span>
             <span className="text-blue-400">contact.txt</span>
-            <span className="text-yellow-400">about/</span>
-            <span className="text-yellow-400">projects/</span>
-            <span className="text-yellow-400">skills/</span>
+            <span className="text-pink-400">about/</span>
+            <span className="text-pink-400">projects/</span>
+            <span className="text-pink-400">skills/</span>
           </div>
         ),
       };

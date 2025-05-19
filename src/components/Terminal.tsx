@@ -50,6 +50,7 @@ const Terminal: React.FC = () => {
         {/* Terminal content */}
         <div
           ref={terminalRef}
+          data-theme="pink"
           className="p-4 h-[70vh] overflow-y-auto font-mono text-sm"
         >
           {showBoot ? (
@@ -63,7 +64,7 @@ const Terminal: React.FC = () => {
                     Welcome to my terminal portfolio!
                   </div>
                   <div className="mb-4">
-                    Type <span className="text-yellow-400">'help'</span> to see
+                    Type <span className="text-pink-400">'help'</span> to see
                     available commands.
                   </div>
                 </div>
@@ -99,7 +100,7 @@ const BootSequence: React.FC = () => {
   }, []);
 
   return (
-    <div className="text-green-500 space-y-1">
+    <div className="text-pink-400 space-y-1" data-theme="pink">
       {bootStage >= 1 && <div>Initializing system...</div>}
       {bootStage >= 2 && <div>Loading kernel modules...</div>}
       {bootStage >= 3 && <div>Starting portfolio services...</div>}

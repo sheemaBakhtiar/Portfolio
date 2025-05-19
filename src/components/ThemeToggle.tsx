@@ -7,7 +7,13 @@ const ThemeToggle: React.FC = () => {
 
   const handleThemeChange = () => {
     setTheme(
-      theme === "green" ? "amber" : theme === "amber" ? "blue" : "green"
+      theme === "green"
+        ? "amber"
+        : theme === "amber"
+        ? "blue"
+        : theme === "blue"
+        ? "pink"
+        : "green"
     );
   };
 
@@ -19,7 +25,13 @@ const ThemeToggle: React.FC = () => {
     >
       <MonitorIcon size={16} className="mr-2" />
       <span>
-        {theme === "green" ? "GREEN" : theme === "amber" ? "AMBER" : "BLUE"}
+        {theme === "green"
+          ? "GREEN"
+          : theme === "amber"
+          ? "AMBER"
+          : theme === "blue"
+          ? "BLUE"
+          : "PINK"}
       </span>
     </button>
   );

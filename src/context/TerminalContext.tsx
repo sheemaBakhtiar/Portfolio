@@ -10,13 +10,13 @@ export interface TerminalContextType {
   }>;
   currentCommand: string;
   historyIndex: number;
-  theme: "green" | "amber" | "blue";
+  theme: "green" | "amber" | "blue" | "pink";
   isTerminalCleared: boolean;
   setCurrentCommand: (command: string) => void;
   setHistoryIndex: (index: number) => void;
   executeCommand: (command: string) => void;
   clearTerminal: () => void;
-  setTheme: (theme: "green" | "amber" | "blue") => void;
+  setTheme: (theme: "green" | "amber" | "blue" | "pink") => void;
 }
 
 export const TerminalContext = createContext<TerminalContextType | undefined>(
@@ -42,8 +42,8 @@ export const TerminalProvider: React.FC<{ children: ReactNode }> = ({
             Welcome to my terminal portfolio!
           </div>
           <div className="mb-4">
-            Type <span className="text-yellow-400">'help'</span> to see
-            available commands.
+            Type <span className="text-pink-400">'help'</span> to see available
+            commands.
           </div>
         </>
       ),
@@ -51,7 +51,9 @@ export const TerminalProvider: React.FC<{ children: ReactNode }> = ({
   ]);
   const [currentCommand, setCurrentCommand] = useState("");
   const [historyIndex, setHistoryIndex] = useState(-1);
-  const [theme, setTheme] = useState<"green" | "amber" | "blue">("green");
+  const [theme, setTheme] = useState<"green" | "amber" | "blue" | "pink">(
+    "pink"
+  );
   const [isTerminalCleared, setIsTerminalCleared] = useState(false);
 
   const executeCommand = (command: string) => {
@@ -89,7 +91,7 @@ export const TerminalProvider: React.FC<{ children: ReactNode }> = ({
               Welcome to my terminal portfolio!
             </div>
             <div className="mb-4">
-              Type <span className="text-yellow-400">'help'</span> to see
+              Type <span className="text-pink-400">'help'</span> to see
               available commands.
             </div>
           </>
