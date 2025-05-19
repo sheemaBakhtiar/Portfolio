@@ -18,6 +18,7 @@ const LandingPageContent: React.FC<LandingPageContentProps> = ({
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
+  const profilePicRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
@@ -29,6 +30,7 @@ const LandingPageContent: React.FC<LandingPageContentProps> = ({
     gsap.set(
       [
         headerRef.current,
+        profilePicRef.current,
         aboutRef.current,
         projectsRef.current,
         contactRef.current,
@@ -50,6 +52,17 @@ const LandingPageContent: React.FC<LandingPageContentProps> = ({
         duration: 0.8,
         ease: "back.out(1.7)",
       })
+      .to(
+        profilePicRef.current,
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "back.out(1.7)",
+          delay: 0.2,
+        },
+        "-=0.2"
+      )
       .to(
         aboutRef.current,
         {
@@ -89,14 +102,29 @@ const LandingPageContent: React.FC<LandingPageContentProps> = ({
     >
       <Navigation onOpenTerminal={onOpenTerminal} />
       {/* Header Section */}
-      <header ref={headerRef} className="text-center mb-16 mt-8">
-        <h1 className="text-4xl md:text-6xl font-bold text-pink-400 mb-4">
-          Sheema Bakhtiar
-        </h1>
-        <p className="text-xl md:text-2xl text-gray-300">
-          Software Developer & Tech Enthusiast
-        </p>
-      </header>
+      {/* Header and Profile Picture Section - Centered Vertically */}
+      <div className="flex flex-col items-center justify-center min-h-[60vh] mt-24 mb-16">
+        <header ref={headerRef} className="text-center mb-12">
+          <h1 className="text-4xl md:text-6xl font-bold text-pink-400 mb-4">
+            Sheema Bakhtiar
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-300">
+            Software Developer & Tech Enthusiast
+          </p>
+        </header>
+
+        {/* Profile Picture Section */}
+        <div ref={profilePicRef} className="flex justify-center">
+          <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-pink-400 shadow-lg hover:shadow-pink-400/50 transition-all duration-300 transform hover:scale-105">
+            {/* Your actual profile image */}
+            <img
+              src="/src/public/me.jpg"
+              alt="Sheema Bakhtiar"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
 
       {/* About Section */}
       <section
