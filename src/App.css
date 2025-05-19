@@ -1,0 +1,102 @@
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes blink {
+  0%, 49% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
+}
+
+.terminal-window {
+  position: relative;
+  overflow: hidden;
+}
+
+.terminal-window::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  z-index: 10;
+}
+
+.terminal-window::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background-color: rgba(0, 255, 0, 0.05);
+  animation: scanline 6s linear infinite;
+  pointer-events: none;
+  z-index: 11;
+}
+
+.cursor {
+  display: inline-block;
+  width: 0.6em;
+  height: 1em;
+  background-color: currentColor;
+  animation: blink 1s step-end infinite;
+  vertical-align: text-bottom;
+  margin-left: 2px;
+}
+
+.prompt {
+  color: #50fa7b;
+  font-weight: bold;
+}
+
+.system-text {
+  color: #bd93f9;
+}
+
+.user-input {
+  color: #8be9fd;
+}
+
+.command-output {
+  color: #f8f8f2;
+  white-space: pre-wrap;
+}
+
+.error-text {
+  color: #ff5555;
+}
+
+.success-text {
+  color: #50fa7b;
+}
+
+.warning-text {
+  color: #ffb86c;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 640px) {
+  .terminal-window {
+    width: 100%;
+    height: 100%;
+    max-height: 80vh;
+  }
+}
