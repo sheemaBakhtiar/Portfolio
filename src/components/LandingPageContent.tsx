@@ -114,7 +114,7 @@ const LandingPageContent: React.FC<LandingPageContentProps> = ({
         </header>
 
         {/* Profile Picture Section */}
-        <div ref={profilePicRef} className="flex justify-center">
+        <div ref={profilePicRef} className="flex flex-col items-center">
           <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-pink-400 shadow-lg hover:shadow-pink-400/50 transition-all duration-300 transform hover:scale-105">
             {/* Your actual profile image */}
             <img
@@ -123,6 +123,10 @@ const LandingPageContent: React.FC<LandingPageContentProps> = ({
               className="w-full h-full object-cover"
             />
           </div>
+          {/* Quote below profile picture */}
+          <p className="mt-4 text-pink-400 font-light italic text-lg tracking-wide transform">
+            "<em>i love creating webapps</em>"
+          </p>
         </div>
       </div>
 
